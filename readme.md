@@ -14,6 +14,20 @@
 
 Importer le script de base de données dans votre 
 
+
+### Configuration
+
+Pour pouvoir accéder à la base de le projet il faut configurer sont accès !
+
+Pour ce faire ouvrez le fichier suivant : `EtablissementScolaire-dao\src\main\java\eu\ensup\etablissementscolaire\BaseDao.java` à part du dossier racine du projet
+
+dans ce fichier rendez vous à la ligne 50. la ligne 50 correspond à la chaine de connexion à la base de donnée, il faut suffit simplement de remplacer `localhost:3306` par l'url ou IP et le port d'accès à votre base de données si elle n'est pas en local sur votre machine et que vous utilisez un autre port que le port par défaut de MySQL (le port par défaut de MySQL est le 3306)
+
+la ligne 51 correspond à l'identifiant de l'utilisateur pour accéder à votre base de données
+
+la ligne 52 correspond au mot de passe de l'utilisateur pour accéder à votre base de données
+
+modifiez les pour correspondre à vos identifiant à vous, sinon l'application ne pourra pas accéder à la base de données !!
 ### Lancer le serveur
 
 Pour lancer le serveur, ouvrez une invite de commande ou un terminal , rendez vous dans le dossier du projet et dans le dossier `EtablissementScolaire-presentation` faites la commande `mvn clean package tomcat7:run`

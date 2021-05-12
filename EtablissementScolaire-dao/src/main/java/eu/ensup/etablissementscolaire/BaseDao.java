@@ -48,8 +48,8 @@ public class BaseDao {
         //PropertyConfigurator.configure(bundle.getString("log.pathconfig"));
         //PropertyConfigurator.configureAndWatch("" + bundle.getString("log.pathconfig"));
         this.url ="jdbc:mysql://localhost:3306/etablissement_scolaire?serverTimezone=Europe/Berlin" ; //bundle.getString("jdbc:mysql://vps-0c0ccce5.vps.ovh.net:3306/etablissement_scolaire?serverTimezone=Europe/Berlin");
-        this.login = "root";//bundle.getString("web");
-        this.password = "secret";//bundle.getString("Ensup2020*");
+        this.login = "";//bundle.getString("web");
+        this.password = "";//bundle.getString("Ensup2020*");
     }
 
     /**
