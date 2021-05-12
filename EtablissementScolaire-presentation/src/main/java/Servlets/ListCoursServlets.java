@@ -28,8 +28,8 @@ public class ListCoursServlets extends HttpServlet {
             CoursService coursService = new CoursService();
             CoursDao coursDao = new CoursDao();
             Set<Cours> listCours = coursService.getAll();
-            int id_cours = listCours.iterator().next().getId();
 
+            req.setAttribute("listCours", listCours);
             this.getServletContext().getRequestDispatcher( VUE ).forward( req, resp );
 
         } catch (GetAllCoursServiceException e) {
