@@ -62,7 +62,7 @@ public class ModificationEtudiant extends HttpServlet {
                 this.getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
             }
         } catch (UpdateEtudiantServiceException | GetEtudiantServiceException e) {
-
+            this.getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
         }
     }
 

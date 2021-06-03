@@ -1,6 +1,4 @@
-/.idea
-Log.out.txt
-/EtablissementScolaire-service/Log.out.txt
-/EtablissementScolaire-dao/Log.out.txt
-/EtablissementScolaire-domaine/Log.out.txt
-/EtablissementScolaire-presentation/Log.out.txt
+/*/.idea
+/*/Log.out.txt
+/*/*.iml
+/*/target/

@@ -1,5 +1,8 @@
 package eu.ensup.etablissementscolaire;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 import eu.ensup.etablissementscolaire.exceptions.CRUDException;
@@ -21,9 +25,9 @@ import org.apache.log4j.PropertyConfigurator;
  */
 public class BaseDao {
 
-    private final String url;
-    private final String login;
-    private final String password;
+    private String url;
+    private String login = null;
+    private String password = null;
     private static Connection cn = null;
     private static Statement st = null;
     private static ResultSet rs = null;
@@ -44,12 +48,13 @@ public class BaseDao {
      * Instantiates a new Base dao.
      */
     public BaseDao() {
+        ResourceBundle bundle = ResourceBundle.getBundle("db");
         //ResourceBundle bundle = ResourceBundle.getBundle("eu.ensup.domaine.properties.config");
         //PropertyConfigurator.configure(bundle.getString("log.pathconfig"));
         //PropertyConfigurator.configureAndWatch("" + bundle.getString("log.pathconfig"));
-        this.url ="jdbc:mysql://localhost:3306/etablissement_scolaire?serverTimezone=Europe/Berlin" ; //bundle.getString("jdbc:mysql://vps-0c0ccce5.vps.ovh.net:3306/etablissement_scolaire?serverTimezone=Europe/Berlin");
-        this.login = "";//bundle.getString("web");
-        this.password = "";//bundle.getString("Ensup2020*");
+        this.url = bundle.getString("db.url");
+        this.login = bundle.getString("db.username"); ;//bundle.getString("web");
+        this.password = bundle.getString("db.password"); ;//bundle.getString("Ensup2020*");
     }
 
     /**
