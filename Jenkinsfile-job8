@@ -4,11 +4,11 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				bat 'mvn install'
+				sh 'mvn install'
 			}
 		 post {
                 success {
-                    junit 'target/surefire-reports/*.xml'
+                    junit 'EtablissementScolaire-service/target/surefire-reports/*.xml'
                 }
             }   
 		}
