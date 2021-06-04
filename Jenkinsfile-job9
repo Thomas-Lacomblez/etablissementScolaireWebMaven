@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
-                bat '''
+                sh '''
                     echo $PATH
                     echo $M2_HOME
                 '''
