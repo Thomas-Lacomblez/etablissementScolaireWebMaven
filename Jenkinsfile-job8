@@ -1,6 +1,10 @@
 // Declarative //
 pipeline {
 	agent any
+    tools {
+        maven 'maven-3.8.1'
+        jdk 'jdk-11'
+    }
 	stages {
 		stage('Build') {
 			steps {
